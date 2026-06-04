@@ -1,48 +1,93 @@
 ```
-# Dependencies
-node_modules/
+# Minified CSS and JS files
+*.min.css
+*.min.js
 
-# Environment
+# Build artifacts in assets
+assets/css/*.min.css
+assets/js/*.min.js
+
+# Vendor dependencies
+assets/vendor/
+
+# Logs
+*.log
+
+# Environment files
 .env
 .env.local
-.env.*
+*.env.*
 
-# Logs and temp files
-*.log
-*.tmp
-
-# Editors
+# IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Python
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
+
+# Python virtual environments
 venv/
 .venv/
-.env
-.env.local
-.env.*
-.pytest_cache/
-.mypy_cache/
-.coverage
-coverage/
-htmlcov/
+env/
+.ENV/
 
-# Build directories
-dist/
-build/
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Java/Maven/Gradle
 target/
-*.egg-info/
+.gradle/
+build/
+*.class
+*.jar
+*.war
+*.ear
 
-# OS generated files
-.DS_Store
-Thumbs.db
+# C/C++
+*.o
+*.a
+*.so
+*.exe
+*.dll
+*.obj
+*.out
 
-# Compression
+# Ruby
+*.gem
+*.rbc
+coverage/
+InstalledFiles
+pkg/
+spec/reports/
+test/tmp/
+test/version_tmp/
+tmp/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Compressed files
 *.zip
 *.gz
 *.tar

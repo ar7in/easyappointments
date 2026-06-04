@@ -191,6 +191,12 @@ function vendor(done) {
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('assets/vendor/flatpickr'));
 
+    // vazirmatn (for RTL languages - Persian, Arabic, Hebrew)
+    gulp.src([
+        'node_modules/vazirmatn/Vazirmatn-font-face.css',
+        'node_modules/vazirmatn/fonts/**/*',
+    ]).pipe(gulp.dest('assets/vendor/vazirmatn'));
+
     done();
 }
 
