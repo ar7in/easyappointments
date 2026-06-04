@@ -29,6 +29,57 @@ select {
     -webkit-appearance: none;
 }
 
+/* RTL SUPPORT
+   ------------------------------------------------------------------------- */
+
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+
+    body {
+        font-family: 'Vazirmatn', var(--bs-body-font-family);
+    }
+
+    .ui-datepicker {
+        direction: rtl;
+
+        .ui-datepicker-prev-hover {
+            left: auto !important;
+            right: 2px !important;
+        }
+
+        .ui-datepicker-next-hover {
+            right: auto !important;
+            left: 2px !important;
+        }
+    }
+
+    .flatpickr-calendar {
+        direction: rtl;
+
+        .flatpickr-prev-month {
+            left: auto;
+            right: 0;
+        }
+
+        .flatpickr-next-month {
+            right: auto;
+            left: 0;
+        }
+    }
+
+    .popover-body a {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+
+    .ui-timepicker-rtl {
+        dl dd {
+            margin: 0 10px 10px 40%;
+        }
+    }
+}
+
 /* UTILITIES
    ------------------------------------------------------------------------- */
 

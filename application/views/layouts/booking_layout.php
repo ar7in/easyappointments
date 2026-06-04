@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<?= config('language_code') ?>">
+<html lang="<?= config('language_code') ?>" dir="<?= in_array(config('language'), ['persian', 'arabic', 'hebrew']) ? 'rtl' : 'ltr' ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +26,11 @@
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/themes/' . vars('theme') . '.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/general.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/css/frontend.css') ?>">
+
+    <!-- Vazirmatn Font for RTL languages -->
+    <?php if (in_array(config('language'), ['persian', 'arabic', 'hebrew'])): ?>
+        <link rel="stylesheet" type="text/css" href="<?= asset_url('assets/vendor/vazirmatn/Vazirmatn-font-face.css') ?>">
+    <?php endif; ?>
 
     <?php component('company_color_style', ['company_color' => vars('company_color')]); ?>
 
