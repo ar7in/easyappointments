@@ -30,6 +30,7 @@
     "bootstrap": "^5.3.8",
     "cookieconsent": "^3.1.1",
     "flatpickr": "^4.6.13",
+    "flatpickr-jalali-support": "^1.0.3",
     "fullcalendar": "^6.1.19",
     "jquery": "^3.7.1",
     "jquery-jeditable": "^2.0.19",
@@ -37,7 +38,8 @@
     "moment-timezone": "^0.6.0",
     "select2": "^4.1.0-rc.0",
     "tippy.js": "^6.3.7",
-    "trumbowyg": "^2.31.0"
+    "trumbowyg": "^2.31.0",
+    "vazirmatn": "^33.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
