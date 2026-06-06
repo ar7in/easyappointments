@@ -1,0 +1,62 @@
+# ----------------------------------------------------------------------------
+# Easy!Appointments - Online Appointment Scheduler
+#
+# @package     EasyAppointments
+# @author      A.Tselegidis <alextselegidis@gmail.com>
+# @copyright   Copyright (c) Alex Tselegidis
+# @license     https://opensource.org/licenses/GPL-3.0 - GPLv3
+# @link        https://easyappointments.org
+# @since       v1.0.0
+# ----------------------------------------------------------------------------
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Prevent direct access to sensitive directories
+    RewriteRule ^application/.*$ - [F,L]
+    RewriteRule ^system/.*$ - [F,L]
+    RewriteRule ^storage/.*$ - [F,L]
+    RewriteRule ^vendor/.*$ - [F,L]
+    RewriteRule ^node_modules/.*$ - [F,L]
+    RewriteRule ^tests/.*$ - [F,L]
+    RewriteRule ^docs/.*$ - [F,L]
+    RewriteRule ^docker/.*$ - [F,L]
+    
+    # Redirect all requests to index.php except existing files/directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "\.(env|gitignore|gitattributes|composer\.(json|lock)|package\.(json|lock)|phpunit\.xml)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# PHP Settings (adjust as needed for your hosting)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 128M
+    php_value post_max_size 128M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+    php_value memory_limit 256M
+</IfModule>
+
+# Error pages (optional - customize paths as needed)
+# ErrorDocument 404 /index.php
+# ErrorDocument 403 /index.php
+# ErrorDocument 500 /index.php
