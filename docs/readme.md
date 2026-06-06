@@ -3,6 +3,7 @@
 Welcome to the documentation pages of Easy!Appointments. Navigate through the available sections and learn how to get the most out of your installation.
 
 - [Installation](installation-guide.md)
+- [cPanel Installation](cpanel-installation-guide.md)
 - [Update](update-guide.md)
 - [Docker](docker.md)
 - [Console](console.md)
